@@ -1,0 +1,38 @@
+<div class= "panel-heading">
+    <h3 class= "panel-title gray">Your Superhero team is:</h3>
+</div>
+<div class= "panel-body">
+    <% @team_number.times do |i|%>
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <img src="<%= @team_avatar[i] %>">
+            </div>
+            <div class="col-md-8">
+                <h3>
+                    Superhero name:<br/>
+                    <span class = "red"><%= @team_name[i] %><br/></span>
+                </h3>  
+                <h3>
+                    Superhero power:<br/> 
+                    <span class = "red"><%= team_power[i] %><br/><br/></span>
+                </h3>
+                <h4>
+                    Your Undercover Day job is:<br/>
+                    <span class = "corp_red"><%= team_job[i] %><br/></span>
+                </h4>
+                <h4>
+                    Your Corporate Superpower is:<br/> 
+                    <span class = "corp_red"><%= team_superpower[i] %><br/><br/></span>
+                </h4>
+            </div>
+        </div>
+        <div class= "row">
+            <div class= "col-md-12">
+                <hr>
+            </div>
+        </div>
+    <% end %>
+</div>
+<div class="panel-footer">
+    <%= link_to 'Create a new Superhero team', home_team_path %>
+</div>

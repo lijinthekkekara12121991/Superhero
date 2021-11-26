@@ -18,5 +18,18 @@ class HomeController < ApplicationController
     end
 
     def team
+        @team_number = params[:team_number].to_i
+        @team_name = []
+        @team_power = []
+        @team_job = []
+        @team_superpower = []
+        @team_avatar = []
+        @team_number.times do
+            @team_name << Faker::Superhero.name
+            @team_power << Faker::Superhero.power
+            @team_job << (Faker::Job.title).titleize
+            @team_superpower << (Faker::Company.bs).capitalize
+            @team_avatar << Faker::Avatar.image(slug: rand(1..100), size: "300x300", format: "png", set: "set" + rand(1..2).to_s, bgset: "bg" + rand(1..2).to_s)
+        end
     end
 end

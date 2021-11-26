@@ -1,0 +1,19 @@
+<div class= "panel-heading">
+    <h3 class= "panel-title gray">How many team members do you want?</h3>
+</div>
+<div class= "panel-body">
+    <div class="row">
+        <div class= "col-md-4">
+            <%= form_tag home_team_path, :method => 'POST' do %>
+                <%= select_tag(:team_number, options_for_select([
+                    ['1', 1],
+                    ['2', 2],
+                    ['3', 3],
+                    ['4', 4],
+                    ['5', 5]
+                ]), class: "form-control") %><br/>
+                <%= submit_tag 'Build your Team!', class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</div>

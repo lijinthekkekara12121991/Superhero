@@ -1,2 +1,7 @@
-<h1>Create a superhero team!</h1>
-<p>Lets make the team</p>
+<div class= "panel panel-default">
+    <% if @team_number > 0 %>
+        <%= render 'home/show_team' %>
+    <% else %>
+        <%= render 'home/create_team'%>
+    <% end %>
+</div>
